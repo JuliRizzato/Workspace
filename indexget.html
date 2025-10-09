@@ -52,11 +52,6 @@
 <script>
 const parrafoResaltado = document.querySelectorAll("div.resaltado");
         parrafoResaltado.forEach(div => div.style.color = "blue");
-        if(parrafoResaltado.innerText == "Div2"){
-            console.log("god")
-        } else {
-            console.log("nogod")
-        };
 
 
 </script>
@@ -67,15 +62,31 @@ const parrafoResaltado = document.querySelectorAll("div.resaltado");
       </section>
     <!-- Tercera sección -->
       <section>
-
         <h1>3️⃣ document.querySelectorAll</h1>
+
+        <ul>
+          <li class="producto">Durazno</li>
+          <li class="producto">Pera</li>
+          <li class="producto">Manzana</li>
+        </ul>
+
+        <script>
+          const productos = document.querySelectorAll(".producto");
+          productos.forEach((item, index) => {
+            item.innerText = `${index + 1}. ${item.innerText}`;
+          });
+        </script>
+  <hr>
+           <!--Ocultar múltiples elementos-->
+          <div class="ocultar">Elemento 1</div>
+          <div class="ocultar">Elemento 2</div>
+          <div class="ocultar">Elemento 3</div>
+<script>
+const elementos = document.querySelectorAll(".ocultar");
+elementos.forEach(el => el.style.display = "none");
+
+</script>
       </section>
-    </main>
-
-
- 
-
-
     <h1 id="titulo">Hola Mundo!</h1>
     <button id="btnS">cambiar el texto con CSS</button>
     <script>
@@ -103,6 +114,64 @@ const parrafoResaltado = document.querySelectorAll("div.resaltado");
     </script>
 
 
+<!--Ejercicios Clase 3-->
 
+<!--
+1) Selecciona todos los elementos con una clase específica y cámbiales el texto.
+
+2)Agrega una nueva clase a un elemento seleccionado.
+
+
+-->
+
+<ul>
+<li class="c">texto original 1</li>
+<li class="c">texto original 2</li>
+<li id="c1" class="c" >texto original 3</li>
+<li class="c">texto original 4</li>
+<li class="c">texto original 5</li>
+</ul>
+<button id="list">Cambiar el texto de esta lista</button>
+
+<script>
+const lista = document.querySelectorAll(".c");
+
+  document.getElementById("list").onclick = function(){
+     lista.forEach((item, index) => {
+    item.innerText = `texto cambiado ${index + 1}`
+
+    const c12 = document.getElementById("c1");
+    c12.innerText = "¡Texto del tercer ítem cambiado!";
+    c12.classList.add("clase423");
+  })};
+</script>
+<style>
+  .clase423{
+    color: red;
+  }
+</style>
+
+
+
+<h1>Eventos</h1>
+ <button id="boton">Activar alerta</button>
+    <script>
+        document.getElementById("boton").onclick = function(){
+        alert("Hola Mundo!");
+        console.log("Hola Mundo!")
+    };
+    </script>
+
+<!--
+Implementa un botón que oculte o muestre un elemento al hacer clic (toggle).
+-->
+
+
+</style>
+
+
+
+
+    </main>
   </body>
 </html>
