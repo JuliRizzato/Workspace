@@ -429,11 +429,6 @@ function boton() {
 
 
 
-
-
-
-
-
   <section>
     <h2>3. Evento mouseover</h2>
     <div id="caja" style="padding:20px;border:1px solid #000;">Pasa el mouse por aquí</div>
@@ -460,23 +455,117 @@ function boton() {
   </section>
 
 
-
-
- <button id="btnDblClick3">Doble click aquí</button>
+<!--1) Crea un botón que muestre un mensaje en consola al hacer clic.-->
+<hr>
+    <button id='btnClick4'>Haz click aquí</button>
     <script>
-      document.getElementById('btnDblClick3').addEventListener('dblclick', function() {
-        alert("Hola Mundo!");
+      document.getElementById('btnClick4').addEventListener('click', function() {
+        console.log("Hola Mundo!");
       });
     </script>
+<!--2) Haz que un campo de texto cambie su color de fondo al escribir en él.-->
+<hr>
+<p>Comienza a escribir para cambiar el color de fondo</p>
+<input type="text" id="textFon">
+<script>
+document.getElementById('textFon').addEventListener('input', function(){
+textFon.style.backgroundColor = "black";
+textFon.style.color = "white";
+});
+</script>
+
+<hr>
+<!--3) Implementa un contador que aumente cada vez que se haga clic en un botón.-->
+<button id="contador">+</button> 
+<p id="numContador">0</p>
+
+<script>
+  let contador = 0;
+
+  numContador.style.color = "white";
+  document.getElementById('contador').onclick = function(){
+  
+  contador++;
+  document.getElementById('numContador').textContent = contador;
+
+
+  };
+</script>
+<hr>
+<!--4) Muestra un mensaje de error si un campo de texto está vacío al enviar un formulario.-->
+<form id="formU">
+<h4>Verificar edad</h4>
+<input type="text" id="edad900" placeholder="Ingrese su edad"><br>
+
+<input type="submit" id="enviar">
+
+<script>
+  formU.style.backgroundColor = "lightgray";
+document.getElementById('enviar').addEventListener('click', function(){
+
+let edadC = document.getElementById('edad900').value;
+edadC = parseInt(edadC);
+
+if (isNaN(edadC)) {
+  alert('ingrese un número');
+} else {
+  if (edadC >= 18) {
+        alert('Eres mayor de edad');
+      } else {
+        alert('Eres menor de edad');
+      }
+}
+});
+</script>
+</form>
+<hr>
+<!--5) Cambia la posición de un elemento cuando se pase el ratón sobre él.-->
+
+<h3>Este cuadro cambiará de posición en cuanto pases el ratón sobre él</h3>
+<p id="tituCuadro">A</p>
+<script>
+  tituCuadro.style.padding = "5px";
+  tituCuadro.style.border = "solid";
+</script>
+
+
+<hr>
+<!--6) Detecta y muestra en la consola la tecla presionada por el usuario.-->
+<hr>
+<!--7) Implementa un botón que oculte o muestre un elemento al hacer clic (toggle)-->
+<!--8) Crea un campo de selección (dropdown) que actualice un párrafo con la opción seleccionada.-->
+<hr>
+<!--9) Implementa un formulario con validación para correos electrónicos.-->
+
+<!--10) Haz un evento que cambie el texto de un botón al hacer clic en él.-->
 
 
 
 
 
 
+<script>
+
+let numerales = [1,2,3,4,5,6,7,8,9,10];
+console.log(numerales);
+
+const Persona = {
+nombre: 'Juan' ,
+apellido: 'Pérez',
+edad: '37',
+provincia: 'Mendoza',
+
+saludar: function (){
+  
+return "HOLA" + this.Nombre;
+
+}};
+
+console.log(objeto.saludar());
 
 
 
+</script>
 
 
 
