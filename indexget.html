@@ -520,23 +520,15 @@ if (isNaN(edadC)) {
 </form>
 <hr>
 <!--5) Cambia la posición de un elemento cuando se pase el ratón sobre él.-->
-
-<h3>Este cuadro cambiará de posición en cuanto pases el ratón sobre él</h3>
-<p id="tituCuadro">A</p>
-<script>
-  tituCuadro.style.padding = "5px";
-  tituCuadro.style.border = "solid";
-</script>
-
-
 <hr>
 <!--6) Detecta y muestra en la consola la tecla presionada por el usuario.-->
 <hr>
 <!--7) Implementa un botón que oculte o muestre un elemento al hacer clic (toggle)-->
+<hr>
 <!--8) Crea un campo de selección (dropdown) que actualice un párrafo con la opción seleccionada.-->
 <hr>
 <!--9) Implementa un formulario con validación para correos electrónicos.-->
-
+<hr>
 <!--10) Haz un evento que cambie el texto de un botón al hacer clic en él.-->
 
 
@@ -549,7 +541,7 @@ if (isNaN(edadC)) {
 let numerales = [1,2,3,4,5,6,7,8,9,10];
 console.log(numerales);
 
-const Persona = {
+const persona = {
 nombre: 'Juan' ,
 apellido: 'Pérez',
 edad: '37',
@@ -557,11 +549,126 @@ provincia: 'Mendoza',
 
 saludar: function (){
   
-return "HOLA" + this.Nombre;
+return "HOLA " + this.nombre;
 
 }};
 
-console.log(objeto.saludar());
+console.log(persona.saludar());
+</script>
+
+
+
+
+<script>
+const producto1 = {
+  nombre: 'Leche',
+  precio: 2000,
+  cantidad: 12,
+  total: function(){
+    return this.precio * this.cantidad;
+  }
+};
+
+const producto2 = {
+  nombre: 'Gaseosa',
+  precio: 3000,
+  cantidad: 23,
+  total: function(){
+    return this.precio * this.cantidad;
+  }
+};
+
+const producto3 = {
+  nombre: 'Chocolate',
+  precio: 1700,
+  cantidad: 18,
+  total: function(){
+    return this.precio * this.cantidad;
+  }
+};
+
+const producto4 = {
+  nombre: 'Manzanas',
+  precio: 1200,
+  cantidad: 30,
+  total: function(){
+    return this.precio * this.cantidad;
+  }
+};
+
+
+
+
+
+let productos100 = [
+{ 'nombre': 'Laptop', 'precio': 800000, 'cantidad': 2},
+{ 'nombre': 'Mouse', 'precio': 9000, 'cantidad': 8},
+{ 'nombre': 'Teclado', 'precio': 15000, 'cantidad': 7},
+];
+
+
+function agregarProducto(nombre, precio, cantidad){
+  productos100.push({nombre, precio, cantidad})
+};
+
+
+
+
+
+
+function calcularCostoTotal() {
+  return productos100.reduce((total, productos100) => total + (productos100.precio * productos100.cantidad), 0);
+}
+
+// Función para filtrar productos por precio
+function filtrarPorPrecio(precioMinimo) {
+  return productos100.filter(productos100 => productos100.precio >= precioMinimo);
+}
+
+agregarProducto('Altavoces', 8600, 9);
+agregarProducto("Monitor", 15000, 1);
+console.log("Productos:", productos100);
+console.log("Costo total:", calcularCostoTotal());
+console.log("Productos con precio mayor o igual a 10000:", filtrarPorPrecio(10000));
+
+
+//console.log('JSON de productos: ', JSON.stringify(productos100, null, 2));
+
+
+
+//1. Crea un arreglo con 5 números y muestra el tercero en consola.
+
+
+
+let array1 = [74,31,18,87,50,64,12,8,99];
+
+console.log(array1[1 -1]) // Los arreglos comienzan en 0, por eso el -1
+
+
+//2. Agrega un nuevo elemento a un arreglo usando push.
+array1.push(120);
+console.log('Array completo: ' + array1);
+
+//3. Elimina el último elemento de un arreglo y muéstralo en consola.
+
+
+let removido = array1.pop();
+console.log('Elemento eliminado: '+ removido);
+console.log('Array actualizado: ' + array1);
+
+//4. Usa map para multiplicar por 2 cada número de un arreglo.
+
+let dupla = array1.map(num => num * 2);
+console.log(dupla);
+
+
+//5. Filtra un arreglo para obtener solo los números mayores a 10.
+
+
+let arrayMayor = array1.map(num => num > 10);
+console.log(arrayMayor);
+
+
 
 
 
